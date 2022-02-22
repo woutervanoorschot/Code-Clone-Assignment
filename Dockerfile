@@ -2,6 +2,8 @@ FROM python:3.6-slim-jessie
 
 RUN apt-get update && apt-get install -y curl
 
+RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash - && apt-get install -y git nodejs cloc
 
 WORKDIR /usr/jquery-data
