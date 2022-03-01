@@ -6,5 +6,5 @@ for(i = 0; i< numbers.length; i++){
     if(numbers[i].toString().indexOf('5') > -1){
         count++;
     }
-    console.log(count);
 }
+console.log(count);
