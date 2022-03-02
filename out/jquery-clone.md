@@ -1,3 +1,8 @@
+GOAL:
+To analyze how different version of jQuery evolved we first need to determine exactly why type of clones JsInspect can detect. 
+After running JsInspect on this surrogate set you should discuss the ability or inability of JsInspect to correctly detect the clones. 
+
+
 ## run jsinpsect on jquery codebase
 
 Only the `jquery.js` files are the 'true' source code of jquery, complete but not minified. As such these files need to be compared across versions.
