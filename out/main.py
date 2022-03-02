@@ -1,6 +1,8 @@
 import os
 import json
 import glob
+import csv
+
 
 # fpaths = glob.glob("/usr/jquery-data/*/jquery.js")
 fpaths = glob.glob("/out/jquery-versions/*.js") # these do not really work past version 2.x
@@ -9,6 +11,9 @@ def savediff(file1, file2, diff):
     # uses metric from "Analysis of the Linux Kernel Evolution Using Code Clone Coverage"
     metric = (diff/(filelens[file1] + filelens[file2]))
     n = lambda x: x.split('-')[2]
+    with open("file.csv","a") as f:
+        out = n(file1) + ", " +  n(file2) + ", " + str(float(metric)) + "\n"
+        f.writelines(out)
     print(n(file1), n(file2), metric)
 
 # 'global' filelens
