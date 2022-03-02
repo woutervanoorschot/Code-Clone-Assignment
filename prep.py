@@ -18,5 +18,7 @@ if __name__ == "__main__":
     for release in releases:
         command = f"git clone -b '{release['tag']}' --single-branch --depth 1 https://github.com/jquery/jquery.git {release['tag']}"
 
+        command = f"curl --remote-name https://code.jquery.com/jquery-{release['tag']}.js"
+
         print(f"Executing {command}")
         os.system(command)
