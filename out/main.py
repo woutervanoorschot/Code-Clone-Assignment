@@ -29,7 +29,7 @@ for fpath1 in fpaths:
             savediff(fpath1, fpath2, 0)
             continue
 
-        out = json.load(os.popen('jsinspect -I -L -t 40 {} {} -r json'.format(fpath1, fpath2)))
+        out = json.load(os.popen('jsinspect -I -L -t 39 {} {} -r json'.format(fpath1, fpath2)))
         # first, count the total amount of code duplication, and keep track of the ranges
         total = 0
         ranges = []
