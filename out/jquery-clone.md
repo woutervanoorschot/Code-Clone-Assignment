@@ -27,6 +27,13 @@ output
 
 with `-r json` the output is stored in output.json for later analysis
 
+### Preprocessing
+
+The jquery files in the github repo contain many unneeded files, and since version 2 jquery.js only contains imports of the many javascript files containing the actual source code.
+
+As such the uncompressed jquery files are downloaded from jquery.com, the command in `prep.py` is updated to `command = f"curl --remote-name https://code.jquery.com/jquery-{release['tag']}.js"`. This downloads all versions known in the csv file. The `releases.csv` file is updated to exclude tags `1.0.0, 1.1.0, 1.2.0, 1.3.0, 1.4.0, 1.5.0, 1.6.0 and 1.7.0` as these versions only exist as 1.x (without minor version .0).
+
+Above mentioned files are then renamed to their correct name following semantic versioning standards, with leading `.0`.0
 
 ## lines of code
 
